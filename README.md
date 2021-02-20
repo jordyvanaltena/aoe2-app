@@ -1,4 +1,4 @@
-# vue-typescript
+# Age of Empires 2 civilizations and technology app
 
 ## Project setup
 ```
