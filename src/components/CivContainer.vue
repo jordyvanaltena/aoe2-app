@@ -3,27 +3,19 @@
 		<div class="container-xl py-4">
 			<div class="row">
 				<div class="form w-100 d-flex mb-4">
-					<b-form-input size="lg" class="mr-4" v-model="searchInput" placeholder="Search for civilizations"></b-form-input>
-					<b-button size="lg" variant="primary" type="submit">Search</b-button>
+					<input class="form-control form-control-lg" type="text" v-model="searchInput" placeholder="search for civ" id="">
+					<button class="btn btn-primary btn-lg" type="submit">Search</button>
 				</div>
 			</div>
 			<div v-if="!loadedCivs" class="loading">
-				<b-spinner variant="primary" label="Spinning"></b-spinner>
+				<div class="spinner-border" role="status">
+					<span class="sr-only">Loading...</span>
+				</div>
 			</div>
 			<div class="row" v-if="filteredCivs">
-				<b-card v-for="civ in filteredCivs" :key="civ.id" :title="civ.name" :img-src="require(`../assets/civs/${civ.name.toLowerCase()}.png`)" :img-alt="civ.name" img-left tag="div" class="col-md-6">
-					<b-card-text>
-						<h6>Army type</h6>
-						<p>{{civ.army_type}}</p>
-						<h6>Team Bonus</h6>
-						<p>{{civ.team_bonus}}</p>
-						<h6>Civilization Bonus</h6>
-						<ul>
-							<li v-for="bonus in civ.civilization_bonus" :key="bonus.bonus">{{bonus}}</li>
-						</ul>
-					</b-card-text>
-					<!-- <b-button href="#" variant="primary">Go somewhere</b-button> -->
-				</b-card>
+				<ul>
+					<li v-for="civ in filteredCivs" :key="civ.id">{{civ.name}} <button>Go to civ</button></li>
+				</ul>
 			</div>
 		</div>
 	</div>
