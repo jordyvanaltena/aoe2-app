@@ -1,22 +1,23 @@
 <template>
-	<div class="card col-12">
-
-		<h5>{{name}}</h5>
+	<div class="unit shadow">
+		<h3 class="text-center">{{name}}</h3>
 		<div class="unit-wrap">
-			<img class="unit-icon" :src="require(`../assets/logo.png`)" alt="">
+			<img class="unit-icon" :src="require(`../assets/unit-placeholder.jpg`)" alt="">
 			<div class="stat-wrap">
 				<p v-if="attack" class="unit-stat">Attack: {{attack}}</p>
 				<p v-if="armor" class="unit-stat">Armor: {{armor}}</p>
 				<p v-if="line_of_sight" class="unit-stat">LOS: {{line_of_sight}}</p>
+				<p v-if="range" class="unit-stat">range: {{range}}</p>
+				<p v-if="accuracy" class="unit-stat">accuracy: {{accuracy}}</p>
 			</div>
 		</div>
 		<div class="hitpoints mt-2">
-			<div class="progress">
+            <div class="progress">
 				<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 			<p>{{hit_points}} hitpoints</p>
 		</div>
-		<p class="small">{{description}}</p>
+		<p class="font-italic">{{description}}</p>
         {{cost.Provides}}
 		<div v-if="cost.Cost != 'No cost'" class="cost">
             <h5>cost</h5>
@@ -53,11 +54,18 @@ export default class Unit extends Vue {
 	@Prop() private hit_points!: number;
 	@Prop() private attack!: number;
 	@Prop() private armor!: string;
+	@Prop() private accuracy!: string;
+	@Prop() private range!: number;
 	@Prop() private attack_bonus!: string[];
 }
 </script>
 
 <style lang="scss">
+.unit{
+    background-color: #f8f8f8;
+    padding: 16px;
+    border-radius: 8px;
+}
 .unit-wrap {
 	display: flex;
 	.stat-wrap {
@@ -69,6 +77,7 @@ export default class Unit extends Vue {
 }
 .unit-icon {
 	width: 100px;
+    height: 100px;
 	border: 1px solid black;
 }
 </style>

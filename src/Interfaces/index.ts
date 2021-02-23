@@ -28,6 +28,8 @@ export interface IUnit {
 	attack: number;
 	armor: string;
 	attack_bonus: string[];
+	accuracy: string;
+	range: number ;
 }
 
 export interface IStructure {
