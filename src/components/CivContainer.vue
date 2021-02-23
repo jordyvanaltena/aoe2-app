@@ -3,7 +3,7 @@
 		<div class="container-xl my-4">
 			<div class="row">
 				<div class="form col-md-8 d-flex mb-4">
-					<input class="form-control form-control-lg" type="text" v-model="searchInput" v-on:keydown="clearSort" placeholder="search for unit" id="">
+					<input class="form-control form-control-lg mr-3" type="text" v-model="searchInput" v-on:keydown="clearSort" placeholder="search for unit" id="">
 					<button class="btn btn-primary btn-lg" type="submit">Search</button>
 				</div>
 				<div class="form col-md-4">

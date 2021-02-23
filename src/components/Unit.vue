@@ -4,11 +4,11 @@
 		<div class="unit-wrap">
 			<img class="unit-icon" :src="require(`../assets/unit-placeholder.jpg`)" alt="">
 			<div class="stat-wrap">
-				<p v-if="attack" class="unit-stat">Attack: {{attack}}</p>
-				<p v-if="armor" class="unit-stat">Armor: {{armor}}</p>
-				<p v-if="line_of_sight" class="unit-stat">LOS: {{line_of_sight}}</p>
-				<p v-if="range" class="unit-stat">range: {{range}}</p>
-				<p v-if="accuracy" class="unit-stat">accuracy: {{accuracy}}</p>
+				<p v-if="attack" class="unit-stat"><span class="font-weight-bold"> Attack:</span> {{attack}}</p>
+				<p v-if="armor" class="unit-stat"><span class="font-weight-bold"> Armor:</span> {{armor}}</p>
+				<p v-if="line_of_sight" class="unit-stat"><span class="font-weight-bold"> LOS:</span> {{line_of_sight}}</p>
+				<p v-if="range" class="unit-stat"><span class="font-weight-bold"> range:</span> {{range}}</p>
+				<p v-if="accuracy" class="unit-stat"><span class="font-weight-bold"> accuracy:</span> {{accuracy}}</p>
 			</div>
 		</div>
 		<div class="hitpoints mt-2">
@@ -19,13 +19,13 @@
 		</div>
 		<p class="font-italic">{{description}}</p>
         {{cost.Provides}}
-		<div v-if="cost.Cost != 'No cost'" class="cost">
+		<ul v-if="cost.Cost != 'No cost'" class="cost list-unstyled d-f">
             <h5>cost</h5>
 			<li v-for="(value, name) in cost" :key="value.name">
 				{{ value }}
 				{{ name }}
 			</li>
-		</div>
+		</ul>
         <div v-if="attack_bonus">
             <h6>Attack Bonus vs</h6>
             <p v-for="bonus in attack_bonus" :key="bonus.id">{{bonus}}</p>
