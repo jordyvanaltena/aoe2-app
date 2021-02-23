@@ -50,7 +50,6 @@ import { ageOfEmpiresService } from '../../src/services/ageOfEmpiresService'
 import { ICiv } from '../Interfaces'
 
 
-
 @Component({
 	components: {
 	}
