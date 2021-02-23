@@ -14,7 +14,6 @@
 						<option value="attack">Attack damage</option>
 					</select>
 				</div>
-
 			</div>
 		</div>
 		<div class="container-xl my-4 position-relative">
@@ -116,13 +115,6 @@ export default class UnitContainer extends Vue {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-.card {
-	.card-img-left {
-		width: 100px;
-		height: 100px;
-		margin: auto;
-	}
 }
 .unit-grid {
 	display: grid;
