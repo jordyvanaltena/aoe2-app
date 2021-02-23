@@ -18,12 +18,9 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="card col-md-4 mb-4 p-4 bg-light" v-for="unit in filteredUnits" :key="unit.id">
-					{{unit.name}}
-					<div v-for="(value, key) in unit" :key="value.name">
-						<h6>{{key}}</h6>
-						<p>{{value}}</p>
-					</div>
+				<Unit v-for="unit in filteredUnits" :key="unit.id" v-bind="unit">{{unit.name}}</Unit>
+				<div class="bg-warning m-4 p-2" v-if="filteredUnits.length < 1 && loaded">
+					<h1>No Units Found with name {{searchInput}}</h1>
 				</div>
 			</div>
 		</div>
@@ -33,11 +30,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { ageOfEmpiresService } from '../../src/services/ageOfEmpiresService'
+import Unit from '../../src/components/Unit.vue'
 import { IUnit } from '../Interfaces'
 
 
 @Component({
 	components: {
+		Unit
 	}
 })
 export default class UnitContainer extends Vue {
@@ -54,7 +53,6 @@ export default class UnitContainer extends Vue {
 			.then((response: any) => {
 				this.units = (response.data.units as IUnit[])
 				this.loaded = true;
-				console.log(response)
 			})
 	}
 
