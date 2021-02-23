@@ -1,5 +1,21 @@
 <template>
   <div class="units">
-    <h1>This is the units page</h1>
+    <unit-container></unit-container>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import UnitContainer from '../components/UnitContainer.vue'
+
+@Component({
+  components: {
+    UnitContainer,
+  },
+})
+export default class Units extends Vue {}
+</script>
+
+<style>
+
+</style>

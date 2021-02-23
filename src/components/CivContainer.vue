@@ -92,9 +92,11 @@ export default class CivContainer extends Vue {
 	align-items: center;
 	justify-content: center;
 }
-.card .card-img-left {
-	width: 100px;
-	height: 100px;
-	margin: auto;
-}
+.card{
+	.card-img-left {
+		width: 100px;
+		height: 100px;
+		margin: auto;
+	}
+} 
 </style>
