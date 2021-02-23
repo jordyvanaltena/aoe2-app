@@ -1,5 +1,5 @@
 <template>
-	<div class="card col-lg-3 col-sm-6 col-12 mb-3 border-0">
+	<div class="card col-12">
 
 		<h5>{{name}}</h5>
 		<div class="unit-wrap">
@@ -17,14 +17,16 @@
 			<p>{{hit_points}} hitpoints</p>
 		</div>
 		<p class="small">{{description}}</p>
-		<div v-if="cost != 'No cost'" class="cost">
+        {{cost.Provides}}
+		<div v-if="cost.Cost != 'No cost'" class="cost">
+            <h5>cost</h5>
 			<li v-for="(value, name) in cost" :key="value.name">
 				{{ value }}
 				{{ name }}
 			</li>
 		</div>
         <div v-if="attack_bonus">
-            <h6>Attack Bonus</h6>
+            <h6>Attack Bonus vs</h6>
             <p v-for="bonus in attack_bonus" :key="bonus.id">{{bonus}}</p>
         </div>
 	</div>
