@@ -1,27 +1,32 @@
 <template>
-  <div id="app">
-    <Header/>
-    <civ-container/>
-    <Footer/>
-  </div>
+	<div id="app">
+    <Header></Header>
+    <Sidebar></Sidebar>
+		<router-view />
+		<Footer />
+	</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import CivContainer from './components/CivContainer.vue';
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+import Header from '../src/components/Header.vue'
+import Sidebar from '../src/components/Sidebar.vue'
+import Footer from '../src/components/Footer.vue'
 
 @Component({
   components: {
-    CivContainer,
     Header,
+    Sidebar,
     Footer
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+}
 </script>
 
-<style>
-
+<style lang="css">
+  .router-link{
+    display: block;
+  }
 </style>
