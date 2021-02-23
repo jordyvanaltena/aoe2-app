@@ -5,6 +5,6 @@
  */
 module.exports = {
     devServer: {
-      proxy: 'https://age-of-empires-2-api.herokuapp.com/'
+      proxy: 'http://localhost:8080/'
     }
   }
