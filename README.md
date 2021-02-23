@@ -26,7 +26,7 @@ npm run lint
 - [x] Add sidebar with vue router
 - [x] Add civlization overview
 - [ ] Add civlization single
-- [ ] Add unit overview
+- [x] Add unit overview
     - [ ] Stats
     - [ ] Categories (infantry, cavalary, siege, unique)
 - [ ] Add unit single
