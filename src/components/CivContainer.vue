@@ -80,7 +80,7 @@ export default class CivContainer extends Vue {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .loading {
 	position: absolute;
 	top: 0;

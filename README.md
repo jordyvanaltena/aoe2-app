@@ -23,8 +23,8 @@ npm run lint
 - [x] Add favicon
 - [ ] Add search suggestions
 - [ ] Add images
-- [ ] Add sidebar with vue router
-- [ ] Add civlization overview
+- [x] Add sidebar with vue router
+- [x] Add civlization overview
 - [ ] Add civlization single
 - [ ] Add unit overview
     - [ ] Stats

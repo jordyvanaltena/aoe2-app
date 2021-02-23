@@ -25,7 +25,7 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
   .router-link{
     display: block;
   }
