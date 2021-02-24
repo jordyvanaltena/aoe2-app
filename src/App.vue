@@ -27,9 +27,14 @@ export default class App extends Vue {}
 .router-link {
     display: block;
 }
+body {
+    background-image: url("~@/assets/aoe-bg4.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+}
 #app {
     height: 100%;
-    background-image: url("~@/assets/aoe-bg2.jpeg");
     display: flex;
     flex-direction: column;
     footer {
