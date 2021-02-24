@@ -1,32 +1,50 @@
 <template>
-	<div id="app">
-    <Header></Header>
-    <Sidebar></Sidebar>
-		<router-view />
-		<Footer />
-	</div>
+    <div id="app">
+        <Header></Header>
+        <Sidebar></Sidebar>
+        <router-view class="full-height" />
+        <Footer />
+    </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import Header from '../src/components/Header.vue'
-import Sidebar from '../src/components/Sidebar.vue'
-import Footer from '../src/components/Footer.vue'
+import { Component, Vue } from "vue-property-decorator";
+import Header from "../src/components/Header.vue";
+import Sidebar from "../src/components/Sidebar.vue";
+import Footer from "../src/components/Footer.vue";
 
 @Component({
-  components: {
-    Header,
-    Sidebar,
-    Footer
-  },
+    components: {
+        Header,
+        Sidebar,
+        Footer,
+    },
 })
-export default class App extends Vue {
-
-}
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-  .router-link{
+.router-link {
     display: block;
-  }
+}
+#app {
+    height: 100%;
+    background-image: url("~@/assets/aoe-bg2.jpeg");
+    display: flex;
+    flex-direction: column;
+    footer {
+        justify-self: flex-end;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+.full-height {
+    flex: 1 0 auto;
+}
+footer {
+    flex-shrink: 0;
+}
 </style>
